@@ -1,0 +1,7 @@
+[user]
+	email = theo.portlock@auckland.ac.nz
+	name = theoportlock
+[credential]
+	helper = store
+[init]
+	defaultBranch = main

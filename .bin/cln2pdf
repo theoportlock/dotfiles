@@ -1,0 +1,5 @@
+#!/bin/bash
+nam=$(echo $1 | cut -f 1 -d  '.')
+cln2csv ${nam}.cln &&
+csv2dot ${nam}.csv &&
+dot2pdf ${nam}.dot

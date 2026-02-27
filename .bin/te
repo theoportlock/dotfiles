@@ -1,0 +1,2 @@
+#!/bin/bash
+tar -xzvf $1 --one-top-level

@@ -1,0 +1,4 @@
+#!/bin/bash
+filenam=/tmp/`date +%Y-%m-%d_%H:%M:%S`.png
+import $filenam
+xclip -selection clipboard -target image/png $filenam
