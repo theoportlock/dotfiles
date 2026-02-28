@@ -1,4 +1,8 @@
 ! Use a nice truetype font and size by default...
+*bellIsUrgent: false
+*visualBell: false
+*bellSuppressTime: 0
+*bellVolume: 0
 *faceName: Ubuntu mono
 *faceSize: 10
 *loginshell: true

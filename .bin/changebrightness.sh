@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo vi /sys/class/backlight/amdgpu_bl0/brightness
+sudo vim /sys/class/backlight/amdgpu_bl1/brightness
