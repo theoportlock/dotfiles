@@ -167,6 +167,10 @@ function pud {
 function pod {
 	popd && l
 }
+root() {
+    cd "$(git rev-parse --show-toplevel 2>/dev/null)" || \
+    echo "Not inside a git repository"
+}
 goo() {
     IFS=+ w3m https://google.com/search?hl=en\&q="$*"\&btnI= https://google.com/search?hl=en\&q="$*"
 }
@@ -251,3 +255,6 @@ export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.cabal/bin:$PATH"
 
 alias bat=batcat
+
+# opencode
+export PATH=/home/tpor598/.opencode/bin:$PATH
