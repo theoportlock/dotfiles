@@ -37,7 +37,7 @@ fi
 
 # Aliases
 alias cp='cp -i'
-alias za='zathura'
+alias za='zathura --fork'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias l='ls -thr --color'
