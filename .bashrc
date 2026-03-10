@@ -99,11 +99,12 @@ alias wp="watch -c 'pstree -C age'"
 alias wt="watch -c tree --du -hC"
 alias rf="readlink -f"
 alias dclean="docker system prune -a -f"
-alias labbook="cd ~/todo/labbook/"
+alias labbook="cd ~/todo/labbook/; new.sh"
 alias store='cd /mnt/d/ && ls -thr --color'
 alias please='/usr/bin/sudo $(history -p !!)'
 alias rss='newsboat'
 alias ap='add_to_path'
+alias bat=batcat
 
 # Custom functions
 add_to_path() {
@@ -166,6 +167,10 @@ function pud {
 }
 function pod {
 	popd && l
+}
+root() {
+    cd "$(git rev-parse --show-toplevel 2>/dev/null)" || \
+    echo "Not inside a git repository"
 }
 goo() {
     IFS=+ w3m https://google.com/search?hl=en\&q="$*"\&btnI= https://google.com/search?hl=en\&q="$*"
@@ -250,6 +255,6 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.cabal/bin:$PATH"
 
-alias bat=batcat
 
 bind 'set bell-style none'
+export PATH=/home/tpor598/.opencode/bin:$PATH
