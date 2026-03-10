@@ -1,6 +1,9 @@
 # Remove beeping
 exec --no-startup-id xset b off
 
+# Fingerprints
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # Set mod key
 set $mod Mod1
 
@@ -21,10 +24,12 @@ bindsym $mod+Return exec --no-startup-id xterm
 bindsym $mod+Shift+Return exec /home/theo/system/scripts/urx_curr_dir.sh
 bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+v exec /home/theo/system/scripts/newshell vim
-bindsym $mod+c exec chromium
+bindsym $mod+c exec google-chrome-stable
 bindsym $mod+Shift+s exec sync; exec poweroff
-bindsym --release Print exec scrot /tmp/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym --release Shift+Print exec /home/theo/.bin/screenclip
+bindsym $mod+n exec ~/.bin/newworkspace.sh
+
+# printscreen
+bindsym Print exec flameshot gui
 
 # change focus
 bindsym $mod+h focus left
@@ -171,4 +176,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## Misc
 exec --no-startup-id nm-applet
-#exec --no-startup-id /home/theo/.screenlayout/right.sh; feh --bg-fill ~/Downloads/space.jpg
+exec_always --no-startup-id autorandr --change
