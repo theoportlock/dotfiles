@@ -1,28 +1,36 @@
-! Use a nice truetype font and size by default...
-*bellIsUrgent: false
-*visualBell: false
-*bellSuppressTime: 0
-*bellVolume: 0
+! --- Bell / Audio Settings ---
+! Enabling visualBell redirects the audio "beep" to a silent screen flash.
+XTerm*visualBell: true
+XTerm*bellIsUrgent: false
+XTerm*bellSuppressTime: 100
+XTerm*bellVolume: 0
+XTerm*marginBell: false
+
+! --- Look and Feel ---
 *faceName: Ubuntu mono
 *faceSize: 10
-*loginshell: true
-*savelines: 50000
-*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-*trimSelection: true
-*highlightSelection: true
 *font: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1
 *foreground: rgb:a8/a8/a8
 *background: rgb:00/00/00
+
+! --- Terminal Behavior ---
 *loginShell: true
+*savelines: 50000
 *jumpScroll: true
 *scrollTtyOutput: false
 *scrollKey: true
+*trimSelection: true
+*highlightSelection: true
 *alwaysUseMods: true
 *metaSendsEscape: true
 *utf8Title: true
 *selectToClipboard: true
 *printFileImmediate: /tmp/
 
+! --- Character Classes ---
+*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! --- Colors ---
 *color0:     rgb:00/00/00
 *color1:     rgb:CC/00/00
 *color2:     rgb:00/88/00
@@ -33,13 +41,14 @@
 *color7:     rgb:be/be/be
 *color8:     rgb:66/66/66
 *color9:     rgb:cf/61/71
-*color10:     rgb:7c/bc/8c
-*color11:     rgb:ff/f7/96
-*color12:     rgb:41/86/be
-*color13:     rgb:cf/9e/be
-*color14:     rgb:71/be/be
+*color10:    rgb:7c/bc/8c
+*color11:    rgb:ff/f7/96
+*color12:    rgb:41/86/be
+*color13:    rgb:cf/9e/be
+*color14:    rgb:71/be/be
 *color15:    rgb:ff/ff/ff
 
+! --- Keybindings and Interactions ---
 *.vt100.locale: true
 *.vt100*translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
