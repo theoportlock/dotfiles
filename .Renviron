@@ -1,0 +1,12 @@
+# Do not save workspace on quit
+R_DEFAULT_SAVE=no
+R_SAVE_WORKSPACE=no
+
+# Do not restore .RData automatically
+R_DEFAULT_PACKAGES=utils,stats,graphics,grDevices,methods
+
+# Personal library location
+R_LIBS_USER=~/R/%p-library/%v
+
+# Use a consistent CRAN mirror
+R_CRAN_WEB=https://cloud.r-project.org

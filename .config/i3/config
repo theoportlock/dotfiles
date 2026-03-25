@@ -27,6 +27,7 @@ bindsym $mod+Shift+v exec /home/theo/system/scripts/newshell vim
 bindsym $mod+c exec google-chrome-stable
 bindsym $mod+Shift+s exec sync; exec poweroff
 bindsym $mod+n exec ~/.bin/newworkspace.sh
+bindsym $mod+e exec pcmanfm
 
 # printscreen
 bindsym Print exec flameshot gui
@@ -177,3 +178,5 @@ bindsym XF86AudioPrev exec playerctl previous
 ## Misc
 exec --no-startup-id nm-applet
 exec_always --no-startup-id autorandr --change
+exec --no-startup-id dunst
+exec --no-startup-id udiskie --automount --notify
