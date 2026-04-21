@@ -177,6 +177,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 ## Misc
 exec --no-startup-id nm-applet
-exec_always --no-startup-id autorandr --change
+exec --no-startup-id pasystray
+exec --no-startup-id autorandr --change
 exec --no-startup-id dunst
 exec --no-startup-id udiskie --automount --notify

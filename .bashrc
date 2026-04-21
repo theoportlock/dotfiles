@@ -100,11 +100,18 @@ alias wt="watch -c tree --du -hC"
 alias rf="readlink -f"
 alias dclean="docker system prune -a -f"
 alias labbook="cd ~/todo/labbook/; new.sh"
-alias store='cd /mnt/d/ && ls -thr --color'
 alias please='/usr/bin/sudo $(history -p !!)'
 alias rss='newsboat'
 alias ap='add_to_path'
 alias bat=batcat
+alias wf='workforce'
+
+# For tab ls -lthra
+if [[ -r /usr/share/bash-completion/bash_completion ]]; then
+    source /usr/share/bash-completion/bash_completion
+fi
+#complete -F _ls l
+#complete -o default -F _ls l
 
 # Custom functions
 add_to_path() {
