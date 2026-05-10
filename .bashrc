@@ -133,7 +133,7 @@ o() {
 		explorer.exe "$(wslpath -w "$1")"
 	else
 		# Native Linux
-		pcmanfm "$1" >/dev/null 2>&1 &
+		pcmanfm "$1" >/dev/null 2>&1 & disown
 	fi
 }
 d() {
