@@ -128,7 +128,13 @@ c() {
     pwd > ~/.last_dir
 }
 o() {
-	explorer.exe "$(wslpath -w "$1")"
+	if grep -qi microsoft /proc/version 2>/dev/null; then
+		# WSL/WSL2
+		explorer.exe "$(wslpath -w "$1")"
+	else
+		# Native Linux
+		pcmanfm "$1" >/dev/null 2>&1 &
+	fi
 }
 d() {
     local img
