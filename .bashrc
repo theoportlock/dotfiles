@@ -73,9 +73,9 @@ alias pt='python -m unittest discover -v'
 alias te='tar --one-top-level -xvf'
 alias tz='tar -czvf archive.tar.gz'
 alias ch='chmod a+x'
-alias pi='sudo yay -S'
-alias pu='sudo yay -Syu'
-alias pr='sudo yay -Rns'
+alias pi='yay -S'
+alias pu='yay -Syu'
+alias pr='yay -Rns'
 alias ipython='python -m IPython --no-confirm-exit'
 alias va='source venv/bin/activate'
 alias venv='python3 -m venv venv'
@@ -105,6 +105,7 @@ alias rss='newsboat'
 alias ap='add_to_path'
 alias bat=batcat
 alias wf='workforce'
+alias speedtest='curl -s https://raw.githubusercontent.com/PeterLinuxOSS/speedtest-cli/master/speedtest.py | python -'
 
 # For tab ls -lthra
 if [[ -r /usr/share/bash-completion/bash_completion ]]; then
