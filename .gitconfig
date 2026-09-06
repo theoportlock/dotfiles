@@ -5,3 +5,9 @@
 	helper = store
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
+[alias]
+	lg = log --graph --oneline --decorate -n 20
+	st = status -sb
+	last = log -1 -p
