@@ -1,0 +1,12 @@
+set editing-mode vi
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set menu-complete-display-prefix on
+
+# Up/down history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# Useful shortcuts
+"\C-l": clear-screen
+"\C-w": backward-kill-word
