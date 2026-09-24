@@ -248,6 +248,27 @@ recent() {
   fi
 }
 
+# Terminal Alarm Function
+alarm() {
+    local duration="${1:-10m}"
+    local sound_file="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+
+    echo "Timer set for $duration..."
+
+    if sleep "$duration"; then
+        # Send desktop notification if notify-send is available
+        command -v notify-send >/dev/null 2>&1 && notify-send "Alarm" "Time's up! ($duration elapsed)"
+
+        # Play the alarm sound
+        if [ -f "$sound_file" ]; then
+            paplay "$sound_file"
+        else
+            printf '\a'
+            echo "Alarm sound file not found, triggered system bell instead."
+        fi
+    fi
+}
+
 # Python
 export PYTHONBREAKPOINT=ipdb.set_trace
 
@@ -268,7 +289,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.cabal/bin:$PATH"
-
 
 bind 'set bell-style none'
 export PATH=/home/tpor598/.opencode/bin:$PATH
