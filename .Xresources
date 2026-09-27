@@ -1,5 +1,4 @@
 ! --- Bell / Audio Settings ---
-! Enabling visualBell redirects the audio "beep" to a silent screen flash.
 XTerm*visualBell: true
 XTerm*bellIsUrgent: false
 XTerm*bellSuppressTime: 100
@@ -7,9 +6,17 @@ XTerm*bellVolume: 0
 XTerm*marginBell: false
 
 ! --- Look and Feel ---
-*faceName: Ubuntu mono
-*faceSize: 10
-*font: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1
+! Force Xft TrueType rendering for full Unicode Braille support
+*renderFont: true
+*utf8: 1
+!*faceName: Ubuntu Mono
+*faceName: Adwaita Mono
+!*faceName: JetBrainsMono Nerd Font Mono
+*faceSize: 12
+
+! Disabled legacy bitmap font to prevent iso8859-1 Braille fallback issues:
+! *font: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1
+
 *foreground: rgb:a8/a8/a8
 *background: rgb:00/00/00
 

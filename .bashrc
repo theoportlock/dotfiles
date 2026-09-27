@@ -14,6 +14,9 @@ export EDITOR=vim
 export VISUAL=vim
 export TERMINFO=/usr/share/terminfo/
 export TERMINAL=/bin/xterm
+# Force 24-bit TrueColor support for xterm
+export TERM=xterm-256color
+export COLORTERM=truecolor
 
 # Prompt configuration
 export PS1="\[\e[01;36m\]\u@\h \[\e[01;32m\]\\w\[\e[01;\$(acolor)m\]\$(git_branch)\[\e[01;00m\] "
