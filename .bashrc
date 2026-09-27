@@ -1,6 +1,4 @@
 export LANG=en_US.utf8
-#export LC_ALL=en_US.utf8
-
 set -o vi
 
 # Increases cursor speed
@@ -114,8 +112,6 @@ alias speedtest='curl -s https://raw.githubusercontent.com/PeterLinuxOSS/speedte
 if [[ -r /usr/share/bash-completion/bash_completion ]]; then
     source /usr/share/bash-completion/bash_completion
 fi
-#complete -F _ls l
-#complete -o default -F _ls l
 
 # Custom functions
 add_to_path() {
@@ -127,10 +123,12 @@ add_to_path() {
         return 1
     fi
 }
+
 c() {
     builtin cd $@ && l
     pwd > ~/.last_dir
 }
+
 o() {
 	if grep -qi microsoft /proc/version 2>/dev/null; then
 		# WSL/WSL2
@@ -140,6 +138,7 @@ o() {
 		pcmanfm "$1" >/dev/null 2>&1 & disown
 	fi
 }
+
 d() {
     local img
     local pwd
@@ -170,43 +169,56 @@ d() {
 function vr {
 	vim "$(fc -ln -1 | awk '{print $NF}')"
 }
+
 gdestroy() {
 	git filter-branch --force --index-filter "git rm -r --cached --ignore-unmatch $1" --prune-empty --tag-name-filter cat -- --all
 }
+
 function ppssh {
 	parallel --nonall --progress -S moto,moto_old,moto_old_old,sony,tablet tmux send-keys -t main \""${*:1}"\" ENTER
 }
+
 function pssh {
 	ssh $1 tmux send-keys -t main \""${*:2}"\" ENTER
 }
+
 function pud {
 	pushd $@ && l
 }
+
 function pod {
 	popd && l
 }
+
 root() {
     cd "$(git rev-parse --show-toplevel 2>/dev/null)" || \
     echo "Not inside a git repository"
 }
+
 goo() {
     IFS=+ w3m https://google.com/search?hl=en\&q="$*"\&btnI= https://google.com/search?hl=en\&q="$*"
 }
+
 wiki() {
     IFS=+ w3m https://en.wikipedia.org/w/index.php?search="$*"
 }
+
 git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
+
 acolor() {
   [[ -n $(git status --porcelain=v2 2>/dev/null) ]] && echo 31 || echo 33
 }
+
 function cpr() {
 	rsync -aurvP "$@"
 }
+
 function mvr() {
 	rsync -aurvP --remove-source-files "$@"
 }
+
 # Extracts any archive(s) (if unp isn't installed)
 extract () {
 	for archive in $*; do
